@@ -34,21 +34,21 @@ function toggleSideDrawer(value: boolean) {
         <BsButton mode="icon" icon="search" color="secondary" flat />
         <BsButton mode="icon" icon="notifications" color="secondary" flat />
         <BsButton mode="icon" icon="settings" color="secondary" flat />
-        <BsAvatar img-src="/images/avatar.jpg" class="ms-2" size="46" circle />
+        <BsAvatar img-src="/images/avatar-2.jpg" class="ms-2" size="46" circle />
       </BsAppbarItems>
     </BsAppbar>
     <BsSideDrawer v-model:open="leftDrawer" position="left" clipped fixed-layout>
       <BsListView color="stylish-color-dark" space-around="both" item-rounded-pill>
         <BsListNav>
-          <BsListNavItem icon="home" label="Home" path="/" />
+          <BsListNavItem icon="home_outlined" label="Home" path="/" />
           <BsListNavItem icon="redeem" label="Products" path="/products" />
-          <BsListNavItem icon="assignment" label="Orders" path="/orders" />
-          <BsListNavItem icon="account_box" label="Customers" path="/customers" />
+          <BsListNavItem icon="assignment_outlined" label="Orders" path="/orders" />
+          <BsListNavItem icon="account_box_outlined" label="Customers" path="/customers" />
         </BsListNav>
       </BsListView>
     </BsSideDrawer>
     <BsContainer app class="y-overflow-hidden bg-rgba-blue-grey-slight" @resize="onContainerResize">
-      <main class="container-fluid px-lg-4">
+      <main class="container-fluid px-lg-4 px-xl-5">
         <RouterView v-slot="{ Component }">
           <Transition name="fade-fast" mode="out-in">
             <component :is="Component" />

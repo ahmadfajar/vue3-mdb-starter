@@ -8,30 +8,59 @@
   opacity: 0;
 }
 
+.bg-pink-darken {
+  background-color: #a90a68 !important;
+}
+
 .md-appbar {
-    --md-appbar-title-font-weight: 500;
+  --md-appbar-title-font-weight: 500;
 }
 
 .app-logo {
-    padding-left: .75rem;
-    padding-right: 1rem;
+  padding-left: 0.75rem;
+  padding-right: 1rem;
 
-    > img {
-        height: 42px;
-    }
+  > img {
+    height: 42px;
+  }
 }
 
 .card-gallery {
-    .card {
-        --bs-card-color: #fff;
-    }
+  .card {
+    --bs-card-color: #fff;
+  }
 
-    .card-image {
-        padding: 1rem 1rem 1rem 0.25rem;
+  .card-image {
+    padding: 1rem 1rem 1rem 0.25rem;
 
-        > img {
-            height: 120px;
-            width: 120px;
-        }
+    > img {
+      height: 120px;
+      width: 120px;
     }
+  }
+}
+
+.board-slider {
+  .card {
+    > .card-img-top {
+      height: 140px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.avatar-group {
+  .md-avatar ~ .md-avatar {
+    margin-left: -0.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-fluid {
+    &.px-xl-5 {
+      padding-right: 2rem !important;
+      padding-left: 2rem !important;
+    }
+  }
 }

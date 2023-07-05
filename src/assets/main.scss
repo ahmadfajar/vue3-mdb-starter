@@ -1,0 +1,37 @@
+.fade-fast-enter-active,
+.fade-fast-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-fast-enter-from,
+.fade-fast-leave-to {
+  opacity: 0;
+}
+
+.md-appbar {
+    --md-appbar-title-font-weight: 500;
+}
+
+.app-logo {
+    padding-left: .75rem;
+    padding-right: 1rem;
+
+    > img {
+        height: 42px;
+    }
+}
+
+.card-gallery {
+    .card {
+        --bs-card-color: #fff;
+    }
+
+    .card-image {
+        padding: 1rem 1rem 1rem 0.25rem;
+
+        > img {
+            height: 120px;
+            width: 120px;
+        }
+    }
+}

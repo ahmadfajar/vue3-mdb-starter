@@ -1,6 +1,71 @@
 <script setup lang="ts">
-import CardItemInfo from '@/components/CardItemInfo.vue';
-import CardBoardItem from '@/components/CardBoardItem.vue';
+import BoardSlider from '@/components/BoardSlider.vue';
+import MusicInfo from '@/components/MusicInfo.vue';
+import type { TBoardItemProps } from 'env';
+
+const boardItems: TBoardItemProps[] = [
+  {
+    avatarSrc: [
+      '/images/avatar-1.jpg',
+      '/images/avatar-2.jpg',
+      '/images/avatar-5.webp',
+      '/images/avatar-6.webp'
+    ],
+    imgSrc:
+      'https://knowmax.ai/wp-content/uploads/2021/07/Decision-trees-in-Healthcare-call-centers.jpg',
+    title: 'Issue Tickets',
+    description: 'Daily task',
+    taskCount: 44,
+    commentCount: 12,
+    likeCount: 10,
+    dislikeCount: 4
+  },
+  {
+    avatarSrc: [
+      '/images/avatar-1.jpg',
+      '/images/avatar-2.jpg',
+      '/images/avatar-5.webp',
+      '/images/avatar-6.webp'
+    ],
+    imgSrc: 'https://kmhlabs.com/wp-content/uploads/2021/02/Home-Page-KMH-Quality_1188079282.jpg',
+    title: 'Post Tracking',
+    description: 'Deals Tracking',
+    taskCount: 44,
+    commentCount: 12,
+    likeCount: 10,
+    dislikeCount: 4
+  },
+  {
+    avatarSrc: [
+      '/images/avatar-3.jpg',
+      '/images/avatar-7.webp',
+      '/images/avatar-5.webp',
+      '/images/avatar-6.webp'
+    ],
+    imgSrc: 'https://i1.chainbulletin.com/img/2020/06/744.jpg',
+    title: 'Rebuilding',
+    description: 'Production Line',
+    taskCount: 44,
+    commentCount: 12,
+    likeCount: 10,
+    dislikeCount: 4
+  },
+  {
+    avatarSrc: [
+      '/images/avatar-7.webp',
+      '/images/avatar-2.jpg',
+      '/images/avatar-5.webp',
+      '/images/avatar-6.webp'
+    ],
+    imgSrc: 'https://www.jadeglobal.com/sites/default/files/2019-07/test-automation_1.jpg',
+    title: 'Automation Team',
+    description: 'Remote Team',
+    taskCount: 44,
+    commentCount: 12,
+    likeCount: 10,
+    dislikeCount: 4
+  }
+];
 </script>
 
 <template>
@@ -13,9 +78,9 @@ import CardBoardItem from '@/components/CardBoardItem.vue';
         and build powerful web apps with amazing UI.
       </p>
     </div>
-    <div class="card-gallery row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-5">
-      <div class="col">
-        <CardItemInfo
+    <div class="music-slider g-3 mt-5">
+      <div class="music-item">
+        <MusicInfo
           class="bg-mdb-color darken-1 h-100"
           title="Unlimited music now"
           text="Listen to your favorite artists and albums whenever and wherever, online and offline."
@@ -23,10 +88,10 @@ import CardBoardItem from '@/components/CardBoardItem.vue';
           <template #button>
             <BsButton color="light" size="sm" flat>LISTEN NOW</BsButton>
           </template>
-        </CardItemInfo>
+        </MusicInfo>
       </div>
-      <div class="col">
-        <CardItemInfo class="bg-cyan darken-4 h-100" title="Supermodel" text="Foster the People">
+      <div class="music-item">
+        <MusicInfo class="bg-cyan darken-4 h-100" title="Supermodel" text="Foster the People">
           <template #button>
             <BsButton color="light" size="sm" outlined>START RADIO</BsButton>
           </template>
@@ -35,10 +100,10 @@ import CardBoardItem from '@/components/CardBoardItem.vue';
               <img src="/images/foster.jpg" alt="Supermodel" class="rounded" />
             </div>
           </template>
-        </CardItemInfo>
+        </MusicInfo>
       </div>
-      <div class="col">
-        <CardItemInfo class="bg-pink-darken h-100" title="Halcyon Days" text="Ellie Goulding">
+      <div class="music-item">
+        <MusicInfo class="bg-pink-darken h-100" title="Halcyon Days" text="Ellie Goulding">
           <template #button>
             <div>
               <BsButton color="light" mode="icon" icon="play_arrow" size="sm" outlined />
@@ -49,79 +114,10 @@ import CardBoardItem from '@/components/CardBoardItem.vue';
               <img src="/images/halcyon.jpg" alt="Halcyon Days" class="rounded" />
             </div>
           </template>
-        </CardItemInfo>
+        </MusicInfo>
       </div>
     </div>
     <h3 class="mt-5">Most Recent Boards</h3>
-    <div class="board-slider row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-3">
-      <div class="col">
-        <CardBoardItem
-          :avatar-src="[
-            '/images/avatar-1.jpg',
-            '/images/avatar-2.jpg',
-            '/images/avatar-5.webp',
-            '/images/avatar-6.webp'
-          ]"
-          img-src="https://knowmax.ai/wp-content/uploads/2021/07/Decision-trees-in-Healthcare-call-centers.jpg"
-          title="Issue Tickets"
-          description="Daily task"
-          task-count="44"
-          comment-count="12"
-          like-count="10"
-          dislike-count="4"
-        />
-      </div>
-      <div class="col">
-        <CardBoardItem
-          :avatar-src="[
-            '/images/avatar-1.jpg',
-            '/images/avatar-2.jpg',
-            '/images/avatar-5.webp',
-            '/images/avatar-6.webp'
-          ]"
-          img-src="https://kmhlabs.com/wp-content/uploads/2021/02/Home-Page-KMH-Quality_1188079282.jpg"
-          title="Post Tracking"
-          description="Deals Tracking"
-          task-count="44"
-          comment-count="12"
-          like-count="10"
-          dislike-count="4"
-        />
-      </div>
-      <div class="col">
-        <CardBoardItem
-          :avatar-src="[
-            '/images/avatar-3.jpg',
-            '/images/avatar-7.webp',
-            '/images/avatar-5.webp',
-            '/images/avatar-6.webp'
-          ]"
-          img-src="https://i1.chainbulletin.com/img/2020/06/744.jpg"
-          title="Rebuilding"
-          description="Production Line"
-          task-count="44"
-          comment-count="12"
-          like-count="10"
-          dislike-count="4"
-        />
-      </div>
-      <div class="col">
-        <CardBoardItem
-          :avatar-src="[
-            '/images/avatar-7.wepb',
-            '/images/avatar-2.jpg',
-            '/images/avatar-5.webp',
-            '/images/avatar-6.webp'
-          ]"
-          img-src="https://www.jadeglobal.com/sites/default/files/2019-07/test-automation_1.jpg"
-          title="Automation Team"
-          description="Remote Team"
-          task-count="44"
-          comment-count="12"
-          like-count="10"
-          dislike-count="4"
-        />
-      </div>
-    </div>
+    <BoardSlider class="mt-4" :items="boardItems" />
   </div>
 </template>

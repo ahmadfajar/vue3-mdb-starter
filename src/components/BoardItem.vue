@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import { iconComments, iconListCheck } from '@/mixins/icons';
 
 const props = defineProps({
   avatarSrc: {
@@ -37,13 +38,12 @@ const styles = computed(() => ({
       <BsCardContent type="title">{{ title }}</BsCardContent>
       <BsCardContent>{{ description }}</BsCardContent>
       <div class="d-flex text-grey-600">
-        <div class="d-inline-flex">
-          <BsIcon icon="checklist" />
+        <div class="d-inline-flex align-items-center">
+          <iconListCheck size="18" />
           <span class="ps-2" style="width: 50px">{{ taskCount }}</span>
         </div>
-        <div class="d-inline-flex">
-          <BsIcon icon="comment_outlined" />
-          <span class="ps-2" style="width: 50px">{{ commentCount }}</span>
+        <div class="d-inline-flex align-items-center">
+          <iconComments /><span class="ps-2" style="width: 50px">{{ commentCount }}</span>
         </div>
         <div class="d-inline-flex md-link">
           <BsIcon icon="thumb_up" />

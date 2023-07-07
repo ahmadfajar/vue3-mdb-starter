@@ -43,7 +43,8 @@ const styles = computed(() => ({
           <span class="ps-2" style="width: 50px">{{ taskCount }}</span>
         </div>
         <div class="d-inline-flex align-items-center">
-          <iconComments /><span class="ps-2" style="width: 50px">{{ commentCount }}</span>
+          <iconComments size="18" />
+          <span class="ps-2" style="width: 50px">{{ commentCount }}</span>
         </div>
         <div class="d-inline-flex md-link">
           <BsIcon icon="thumb_up" />

@@ -23,15 +23,16 @@ const wheelHandler = (evt: WheelEvent) => {
   const el = document.getElementById(slider.contentId);
 
   if (el) {
-    slider.contentWidth = el?.clientWidth ?? 0;
+    slider.contentWidth = el?.clientWidth ?? slider.contentWidth;
     const parent = el.parentElement;
-    slider.wrapperWidth = parent?.clientWidth ?? 0;
+    slider.wrapperWidth = parent?.clientWidth ?? slider.wrapperWidth;
     const newOffset = scrollOffset.value + evt.deltaX * -1;
     const deltaW = slider.contentWidth - slider.wrapperWidth;
     const deltaW1 = deltaW + 200;
     // console.info('scrolll:', newOffset);
     // scrollOffset.value = newOffset > 0 ? 0 : Math.abs(newOffset) > deltaW ? -deltaW : newOffset;
-    scrollOffset.value = newOffset > 200 ? 200 : Math.abs(newOffset) > deltaW1 ? -deltaW1 : newOffset;
+    scrollOffset.value =
+      newOffset > 200 ? 200 : Math.abs(newOffset) > deltaW1 ? -deltaW1 : newOffset;
     el.style.transform = `translateX(${scrollOffset.value}px)`;
 
     Helper.defer(() => {
@@ -51,7 +52,7 @@ const wheelHandler = (evt: WheelEvent) => {
   <div class="board-slider g-3">
     <div class="slider-container" @wheel="wheelHandler">
       <div :id="slider.contentId" class="slider-wrapper">
-        <div v-for="(item, idx) in items" :key="item.imgSrc + '-' + idx" class="board-item">
+        <div v-for="(item, idx) in items" :key="item.imgSrc + '-' + idx" class="slider-item">
           <BoardItem
             :avatar-src="item.avatarSrc"
             :img-src="item.imgSrc"
@@ -69,26 +70,21 @@ const wheelHandler = (evt: WheelEvent) => {
 </template>
 
 <style lang="scss">
-.board-slider {
-  width: 100%;
+.slider-container {
+  display: flex;
+  flex: 1 1 auto;
+  contain: content;
+  overflow-x: hidden;
   position: relative;
 
-  .slider-container {
-    display: flex;
-    flex: 1 1 auto;
-    contain: content;
-    overflow-x: hidden;
-    position: relative;
-  }
-
-  .slider-wrapper {
+  > .slider-wrapper {
     display: flex;
     flex: 1 0 auto;
     position: relative;
     white-space: nowrap;
-    transition: transform 0.6s cubic-bezier(.25, .8, .50, 1);
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.5, 1);
 
-    > .board-item {
+    > .slider-item {
       padding: 0 calc(var(--bs-gutter-x) * 0.5) calc(var(--bs-gutter-y) * 0.5);
 
       &:first-child {
@@ -96,6 +92,11 @@ const wheelHandler = (evt: WheelEvent) => {
       }
     }
   }
+}
+
+.board-slider {
+  width: 100%;
+  position: relative;
 
   .card {
     width: 356px;

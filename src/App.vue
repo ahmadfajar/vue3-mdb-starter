@@ -16,7 +16,7 @@ function toggleSideDrawer(value: boolean) {
 </script>
 
 <template>
-  <BsAppContainer viewport-height>
+  <BsAppContainer class="bg-rgba-blue-grey-slight" viewport-height>
     <BsAppbar fixed-top shadow>
       <BsButton
         color="secondary"
@@ -47,14 +47,17 @@ function toggleSideDrawer(value: boolean) {
         </BsListNav>
       </BsListView>
     </BsSideDrawer>
-    <BsContainer app class="y-overflow-hidden bg-rgba-blue-grey-slight" @resize="onContainerResize">
-      <main class="container-fluid px-lg-4 px-xl-5">
+    <BsContainer app @resize="onContainerResize">
+      <BsContent>
+        <main class="container-fluid px-lg-4 px-xl-5">
         <RouterView v-slot="{ Component }">
           <Transition name="fade-fast" mode="out-in">
             <component :is="Component" />
           </Transition>
         </RouterView>
       </main>
+      </BsContent>
     </BsContainer>
+    <BsNotification />
   </BsAppContainer>
 </template>

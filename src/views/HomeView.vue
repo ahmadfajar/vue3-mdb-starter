@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import BoardSlider from '@/components/BoardSlider.vue';
-import MusicInfo from '@/components/MusicInfo.vue';
+import MusicSlider from "@/components/MusicSlider.vue";
 import type { TBoardItemProps } from 'env';
 
+// The boardItems here are for example purposes only.
+// You can use Pinia data storage for advanced use.
 const boardItems: TBoardItemProps[] = [
   {
     avatarSrc: [
@@ -78,45 +80,7 @@ const boardItems: TBoardItemProps[] = [
         and build powerful web apps with amazing UI.
       </p>
     </div>
-    <div class="music-slider g-3 mt-5">
-      <div class="music-item">
-        <MusicInfo
-          class="bg-mdb-color darken-1 h-100"
-          title="Unlimited music now"
-          text="Listen to your favorite artists and albums whenever and wherever, online and offline."
-        >
-          <template #button>
-            <BsButton color="light" size="sm" flat>LISTEN NOW</BsButton>
-          </template>
-        </MusicInfo>
-      </div>
-      <div class="music-item">
-        <MusicInfo class="bg-cyan darken-4 h-100" title="Supermodel" text="Foster the People">
-          <template #button>
-            <BsButton color="light" size="sm" outlined>START RADIO</BsButton>
-          </template>
-          <template #media>
-            <div class="card-image">
-              <img src="/images/foster.jpg" alt="Supermodel" class="rounded" />
-            </div>
-          </template>
-        </MusicInfo>
-      </div>
-      <div class="music-item">
-        <MusicInfo class="bg-pink-darken h-100" title="Halcyon Days" text="Ellie Goulding">
-          <template #button>
-            <div>
-              <BsButton color="light" mode="icon" icon="play_arrow" size="sm" outlined />
-            </div>
-          </template>
-          <template #media>
-            <div class="card-image">
-              <img src="/images/halcyon.jpg" alt="Halcyon Days" class="rounded" />
-            </div>
-          </template>
-        </MusicInfo>
-      </div>
-    </div>
+    <MusicSlider class="mt-5" />
     <h3 class="mt-5">Most Recent Boards</h3>
     <BoardSlider class="mt-4" :items="boardItems" />
   </div>

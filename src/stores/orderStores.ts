@@ -5,6 +5,16 @@ export declare type TPaymentStatus = 'Paid' | 'Unpaid' | 'Pending' | 'Failed';
 
 export declare type TOrderStatus = 'Shipped' | 'Processing' | 'Cancelled' | 'Delivered';
 
+export declare type TOrderRecord = TBsModel & {
+  orderId: number;
+  orderDate: Date;
+  customer: string;
+  paymentStatus: TPaymentStatus;
+  orderStatus: TOrderStatus;
+  total: number;
+  checked: boolean;
+};
+
 let payment: TPaymentStatus;
 let status: TOrderStatus;
 let rnd: number;
@@ -54,7 +64,7 @@ export async function populate(count: number) {
   return ordersData;
 }
 
-export function badgePaymentColor(item: TBsModel): string {
+export function badgePaymentColor(item: TOrderRecord): string {
   if (item.paymentStatus === 'Paid') {
     return 'success bg-rgba-green-slight';
   } else if (item.paymentStatus === 'Unpaid') {
@@ -66,7 +76,7 @@ export function badgePaymentColor(item: TBsModel): string {
   }
 }
 
-export function badgePaymentIcon(item: TBsModel): string {
+export function badgePaymentIcon(item: TOrderRecord): string {
   if (item.paymentStatus === 'Paid') {
     return 'done';
   } else if (item.paymentStatus === 'Unpaid') {
@@ -78,7 +88,7 @@ export function badgePaymentIcon(item: TBsModel): string {
   }
 }
 
-export function badgeOrderStatusColor(item: TBsModel): string {
+export function badgeOrderStatusColor(item: TOrderRecord): string {
   if (item.orderStatus === 'Delivered') {
     return 'success bg-rgba-green-slight';
   } else if (item.orderStatus === 'Shipped') {
@@ -90,7 +100,7 @@ export function badgeOrderStatusColor(item: TBsModel): string {
   }
 }
 
-export function badgeOrderStatusIcon(item: TBsModel) {
+export function badgeOrderStatusIcon(item: TOrderRecord) {
   if (item.orderStatus === 'Delivered') {
     return 'done';
   } else {

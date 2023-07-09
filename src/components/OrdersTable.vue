@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import type { Prop } from 'vue';
-import type { TBsModel, TButtonOptionProps } from 'vue-mdbootstrap';
 import {
+  badgeOrderStatusColor,
+  badgeOrderStatusIcon,
   badgePaymentColor,
   badgePaymentIcon,
-  badgeOrderStatusColor,
-  badgeOrderStatusIcon
+  type TOrderRecord
 } from '@/stores/orderStores';
+import type { Prop } from 'vue';
+import type { TButtonOptionProps } from 'vue-mdbootstrap';
 
 defineProps({
   sources: {
-    type: Array<TBsModel>
-  } as Prop<TBsModel[]>
+    type: Array<TOrderRecord>
+  } as Prop<TOrderRecord[]>
 });
 
 const btnProps: TButtonOptionProps = {
@@ -41,7 +42,7 @@ const btnProps: TButtonOptionProps = {
         <tr v-for="item in sources" :key="item?.orderId">
           <td>#{{ item.orderId }}</td>
           <td class="text-nowrap">
-            {{ (item.orderDate as Date).toLocaleString('en-US', { dateStyle: 'medium' }) }}
+            {{ item.orderDate.toLocaleString('en-US', { dateStyle: 'medium' }) }}
           </td>
           <td class="text-nowrap">{{ item.customer }}</td>
           <td>

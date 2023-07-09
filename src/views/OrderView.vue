@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import OrdersTable from '@/components/OrdersTable.vue';
-import { populate } from '@/stores/orderStores';
+import { populate, type TOrderRecord } from '@/stores/orderStores';
 import { onMounted, ref, shallowRef } from 'vue';
-import type { TBsModel } from 'vue-mdbootstrap';
 
-const ordersData = shallowRef<TBsModel[]>();
+const ordersData = shallowRef<TOrderRecord[]>();
 const search = ref<string>();
 const paymentMenus = ref([
   {
@@ -56,7 +55,7 @@ const orderStatusMenus = ref([
 onMounted(async () => {
   const data = await populate(25);
   data.sort('orderId', 'desc');
-  ordersData.value = data.dataItems;
+  ordersData.value = data.dataItems as TOrderRecord[];
 });
 </script>
 

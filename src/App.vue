@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useBreakpointMax } from 'vue-mdbootstrap';
+import PopupNotification from './components/PopupNotification.vue';
 
 const leftDrawer = ref(true);
+const notifOpen = ref(false);
 
 function onContainerResize() {
   if (useBreakpointMax('xl')) {
@@ -32,7 +34,17 @@ function toggleSideDrawer(value: boolean) {
       <BsSpacer />
       <BsAppbarItems class="pe-3">
         <BsButton mode="icon" icon="search" color="secondary" flat />
-        <BsButton mode="icon" icon="notifications" color="secondary" flat />
+        <BsDropdownMenu
+          v-model:open="notifOpen"
+          :content-click-close="false"
+          placement="bottom-right"
+          space="4"
+        >
+          <BsButton mode="icon" icon="notifications" color="secondary" flat />
+          <template #content>
+            <PopupNotification @close="notifOpen = false" />
+          </template>
+        </BsDropdownMenu>
         <BsButton mode="icon" icon="settings" color="secondary" flat />
         <BsAvatar img-src="/images/avatar-2.jpg" class="ms-2" size="46" circle />
       </BsAppbarItems>
@@ -50,12 +62,12 @@ function toggleSideDrawer(value: boolean) {
     <BsContainer app @resize="onContainerResize">
       <BsContent>
         <main class="container-fluid px-lg-4 px-xl-5">
-        <RouterView v-slot="{ Component }">
-          <Transition name="fade-fast" mode="out-in">
-            <component :is="Component" />
-          </Transition>
-        </RouterView>
-      </main>
+          <RouterView v-slot="{ Component }">
+            <Transition name="fade-fast" mode="out-in">
+              <component :is="Component" />
+            </Transition>
+          </RouterView>
+        </main>
       </BsContent>
     </BsContainer>
     <BsNotification />

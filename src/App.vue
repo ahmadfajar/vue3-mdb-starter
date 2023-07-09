@@ -16,7 +16,7 @@ function toggleSideDrawer(value: boolean) {
 </script>
 
 <template>
-  <BsAppContainer class="bg-rgba-blue-grey-slight" viewport-height>
+  <BsAppContainer viewport-height>
     <BsAppbar fixed-top shadow>
       <BsButton
         color="secondary"
@@ -38,7 +38,7 @@ function toggleSideDrawer(value: boolean) {
       </BsAppbarItems>
     </BsAppbar>
     <BsSideDrawer v-model:open="leftDrawer" position="left" clipped fixed-layout>
-      <BsListView color="stylish-color-dark" space-around="both" item-rounded-pill>
+      <BsListView color="stylish-color" space-around="both" item-rounded-pill>
         <BsListNav>
           <BsListNavItem icon="home_outlined" label="Home" path="/" />
           <BsListNavItem icon="redeem" label="Products" path="/products" />

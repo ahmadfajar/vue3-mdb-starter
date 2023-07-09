@@ -91,7 +91,7 @@ onMounted(() => {
           </MusicInfo>
         </div>
         <div class="slider-item">
-          <MusicInfo class="bg-pink-darken h-100" title="Halcyon Days" text="Ellie Goulding">
+          <MusicInfo class="bg-dark-pink h-100" title="Halcyon Days" text="Ellie Goulding">
             <template #button>
               <div>
                 <BsButton

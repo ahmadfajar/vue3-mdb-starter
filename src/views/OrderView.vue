@@ -66,16 +66,48 @@ onMounted(async () => {
       <BsCard border-off class="shadow">
         <BsCardBody>
           <div class="row mb-4 align-items-center">
-            <div class="col-xl-8">
+            <div class="col-xl-4 order-xl-1">
+              <div class="d-flex justify-content-end">
+                <BsDropdownMenu placement="bottom-right" space="3">
+                  <BsButton color="default-color" title="Export order" outlined>Export</BsButton>
+                  <template #content>
+                    <BsListView space-around="both">
+                      <div class="dropdown-menu">
+                        <div class="dropdown-header">OPTIONS</div>
+                        <a href="#" class="dropdown-item rounded">
+                          <BsAvatar class="text-grey-600" icon="content_copy" size="26" />
+                          <span class="ms-3">Copy</span>
+                        </a>
+                        <a href="#" class="dropdown-item rounded">
+                          <BsAvatar class="text-grey-600" icon="print_outlined" size="26" />
+                          <span class="ms-3">Print</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-header">DOWNLOAD OPTIONS</div>
+                        <a href="#" class="dropdown-item rounded">
+                          <BsAvatar img-src="/images/excel-icon.svg" size="20" />
+                          <span class="ms-3">Excel</span>
+                        </a>
+                        <a href="#" class="dropdown-item rounded">
+                          <BsAvatar img-src="/images/csv-icon.svg" size="20" />
+                          <span class="ms-3">.CSV</span>
+                        </a>
+                        <a href="#" class="dropdown-item rounded">
+                          <BsAvatar img-src="/images/pdf-icon.svg" size="20" />
+                          <span class="ms-3">PDF</span>
+                        </a>
+                      </div>
+                    </BsListView>
+                  </template>
+                </BsDropdownMenu>
+                <BsButton color="default-color" title="Add new order" icon="add">
+                  New Order
+                </BsButton>
+              </div>
+            </div>
+            <div class="col-xl-8 mt-3 mt-xl-0">
               <div class="row align-items-center">
-                <div class="col-md-6 col-xl-auto">
-                  <BsSearchField
-                    v-model="search"
-                    placeholder="Search orders"
-                    style="--md-searchbox-padding-y: 0"
-                  />
-                </div>
-                <div class="col-md-6 col-xl-auto mt-3 mt-md-0">
+                <div class="col-md-6 col-xl-auto order-md-1">
                   <div class="d-flex justify-content-end">
                     <BsDropdownMenu space="2">
                       <BsChip outlined>
@@ -115,45 +147,13 @@ onMounted(async () => {
                     </BsDropdownMenu>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-xl-4 mt-3 mt-xl-0">
-              <div class="d-flex justify-content-end">
-                <BsDropdownMenu placement="bottom-right" space="3">
-                  <BsButton color="default-color" title="Export order" outlined>Export</BsButton>
-                  <template #content>
-                    <BsListView space-around="both">
-                      <div class="dropdown-menu">
-                        <div class="dropdown-header">OPTIONS</div>
-                        <a href="#" class="dropdown-item rounded">
-                          <BsAvatar class="text-grey-600" icon="content_copy" size="26" />
-                          <span class="ms-3">Copy</span>
-                        </a>
-                        <a href="#" class="dropdown-item rounded">
-                          <BsAvatar class="text-grey-600" icon="print_outlined" size="26" />
-                          <span class="ms-3">Print</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <div class="dropdown-header">DOWNLOAD OPTIONS</div>
-                        <a href="#" class="dropdown-item rounded">
-                          <BsAvatar img-src="/images/excel-icon.svg" size="20" />
-                          <span class="ms-3">Excel</span>
-                        </a>
-                        <a href="#" class="dropdown-item rounded">
-                          <BsAvatar img-src="/images/csv-icon.svg" size="20" />
-                          <span class="ms-3">.CSV</span>
-                        </a>
-                        <a href="#" class="dropdown-item rounded">
-                          <BsAvatar img-src="/images/pdf-icon.svg" size="20" />
-                          <span class="ms-3">PDF</span>
-                        </a>
-                      </div>
-                    </BsListView>
-                  </template>
-                </BsDropdownMenu>
-                <BsButton color="default-color" title="Add new order" icon="add">
-                  New Order
-                </BsButton>
+                <div class="col-md-6 col-xl-auto mt-3 mt-md-0">
+                  <BsSearchField
+                    v-model="search"
+                    placeholder="Search orders"
+                    style="--md-searchbox-padding-y: 0"
+                  />
+                </div>
               </div>
             </div>
           </div>

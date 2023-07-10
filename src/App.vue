@@ -51,6 +51,16 @@ function toggleSideDrawer(value: boolean) {
     </BsAppbar>
     <BsSideDrawer v-model:open="leftDrawer" position="left" clipped fixed-layout>
       <BsListView color="stylish-color" space-around="both" item-rounded-pill>
+        <div class="d-lg-none">
+          <div class="d-flex" style="margin: 0.5rem 0.5rem 1rem 1rem">
+            <BsAvatar img-src="/images/avatar-2.jpg" size="82" circle />
+            <div class="d-flex flex-column justify-content-center ms-3">
+              <div class="h5 text-white">John Wick</div>
+              <a href="#" class="text-grey-500 text-decoration-none">Logout</a>
+            </div>
+          </div>
+          <BsDivider />
+        </div>
         <BsListNav>
           <BsListNavItem icon="home_outlined" label="Home" path="/" />
           <BsListNavItem icon="redeem" label="Products" path="/products" />

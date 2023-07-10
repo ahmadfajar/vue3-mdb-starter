@@ -14,7 +14,7 @@ const avatarProps = (item: TNotificationMsg): TAvatarOptionProps => ({
 const closePopup = (emitFn: TEmitFn) => {
   Helper.defer(() => {
     emitFn('close');
-  }, 500);
+  }, 300);
 };
 </script>
 

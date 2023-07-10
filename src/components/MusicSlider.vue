@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import MusicInfo from '@/components/MusicInfo.vue';
 import { onMounted, reactive, ref, shallowRef } from 'vue';
-import {
-  Helper,
-  useGenerateId,
-  useVueMdbNotification,
-  type INotificationProvider
-} from 'vue-mdbootstrap';
+import { useGenerateId, useVueMdbNotification, type INotificationProvider } from 'vue-mdbootstrap';
 
 const scrollOffset = ref<number>(0);
 const slider = reactive({

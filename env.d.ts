@@ -5,7 +5,7 @@ import { BoardItem } from "@/components/types";
 
 export * from "@/components/types";
 
-declare module '@vue/runtime-core' {
+declare module 'vue' {
   export interface GlobalComponents {
     BoardItem: typeof BoardItem;
   }

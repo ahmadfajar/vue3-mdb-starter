@@ -109,13 +109,13 @@ onMounted(async () => {
               <div class="row align-items-center">
                 <div class="col-md-6 col-xl-auto order-md-1">
                   <div class="d-flex justify-content-end">
-                    <BsDropdownMenu space="2">
+                    <BsDropdownMenu space="1">
                       <BsChip outlined>
                         <span>{{ paymentMenus.find((it) => it.active === true)?.text }}</span>
                         <span class="caret-down ms-2"></span>
                       </BsChip>
                       <template #content>
-                        <BsListView>
+                        <BsListView style="width: 158px;">
                           <BsListNav>
                             <BsListNavItem
                               v-for="item in paymentMenus"
@@ -127,13 +127,13 @@ onMounted(async () => {
                         </BsListView>
                       </template>
                     </BsDropdownMenu>
-                    <BsDropdownMenu space="2">
+                    <BsDropdownMenu space="1">
                       <BsChip outlined>
                         <span>{{ orderStatusMenus.find((it) => it.active === true)?.text }}</span>
                         <span class="caret-down ms-2"></span>
                       </BsChip>
                       <template #content>
-                        <BsListView>
+                        <BsListView style="width: 138px;">
                           <BsListNav>
                             <BsListNavItem
                               v-for="item in orderStatusMenus"

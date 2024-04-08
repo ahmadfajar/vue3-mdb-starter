@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import MusicInfo from '@/components/MusicInfo.vue';
-import { onMounted, reactive, ref, shallowRef } from 'vue';
-import { useGenerateId, useVueMdbNotification, type INotificationProvider } from 'vue-mdbootstrap';
+import { reactive, ref } from 'vue';
+import { useGenerateId } from 'vue-mdbootstrap';
 
 const scrollOffset = ref<number>(0);
 const slider = reactive({
@@ -9,7 +9,6 @@ const slider = reactive({
   contentWidth: 0,
   wrapperWidth: 0
 });
-const provider = shallowRef<INotificationProvider>();
 
 const touchOrWheelHandler = (deltaX: number) => {
   const el = document.getElementById(slider.contentId);
@@ -48,9 +47,6 @@ const touchHandler = (evt: WheelEvent) => {
   touchOrWheelHandler(evt.deltaX);
 };
 
-onMounted(() => {
-  provider.value = useVueMdbNotification();
-});
 </script>
 
 <template>
@@ -71,7 +67,7 @@ onMounted(() => {
               <BsButton
                 color="purple"
                 size="sm"
-                @click="provider?.add('You can implement LISTEN NOW on your own.')"
+                @click="$notification.add('You can implement LISTEN NOW on your own.')"
               >
                 LISTEN NOW
               </BsButton>
@@ -85,7 +81,8 @@ onMounted(() => {
                 color="light"
                 size="sm"
                 outlined
-                @click="provider?.add('You can implement START RADIO on your own.')"
+                style="--bs-btn-color: #ccced0; --bs-btn-hover-color: #eee"
+                @click="$notification.add('You can implement START RADIO on your own.')"
               >
                 START RADIO
               </BsButton>
@@ -106,8 +103,9 @@ onMounted(() => {
                   mode="icon"
                   icon="play_arrow"
                   size="sm"
+                  style="--bs-btn-color: #ccced0; --bs-btn-hover-color: #eee"
                   outlined
-                  @click="provider?.add('You can implement this on your own.')"
+                  @click="$notification.add('You can implement this on your own.')"
                 />
               </div>
             </template>

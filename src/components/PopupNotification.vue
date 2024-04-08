@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import TileMessagePart from '@/components/TileMessagePart.vue';
 import { msgData, type TNotificationMsg } from '@/stores/notificationMsg';
-import { Helper, type TAvatarOptionProps, type TEmitFn } from 'vue-mdbootstrap';
-import TileMessagePart from './TileMessagePart.vue';
+import { Helper, type TAvatarOptionProps } from 'vue-mdbootstrap';
+import type { TEventClose } from './types';
 
 defineEmits(['close']);
 
@@ -11,7 +12,7 @@ const avatarProps = (item: TNotificationMsg): TAvatarOptionProps => ({
   size: 40,
   circle: true
 });
-const closePopup = (emitFn: TEmitFn) => {
+const closePopup = (emitFn: TEventClose) => {
   Helper.defer(() => {
     emitFn('close');
   }, 300);
@@ -73,7 +74,7 @@ const closePopup = (emitFn: TEmitFn) => {
 
   > .notification-footer {
     border-top: 1px solid rgb(0, 0, 0, 0.175);
-    padding: 1rem 1.25rem;
+    padding: .875rem 1rem;
   }
 
   > .md-list {

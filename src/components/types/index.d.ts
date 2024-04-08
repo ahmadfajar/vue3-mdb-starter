@@ -14,3 +14,5 @@ export declare const BoardItem: {
     $props: AllowedComponentProps & ComponentCustomProps & VNodeProps & TBoardItemProps;
   };
 };
+
+export declare type TEventClose = (event: 'close', ...args: unknown[]) => void;

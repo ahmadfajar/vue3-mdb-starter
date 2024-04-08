@@ -17,7 +17,7 @@ defineProps({
       </BsCardBody>
       <slot name="media"></slot>
     </div>
-    <BsCardBody class="d-flex flex-column" v-else>
+    <BsCardBody v-else class="d-flex flex-column">
       <BsCardContent type="title">{{ title }}</BsCardContent>
       <BsCardContent type="text" class="flex-fill text-truncate opacity-50">
         <slot name="text">{{ text }}</slot>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import BoardSlider from '@/components/BoardSlider.vue';
-import MusicSlider from "@/components/MusicSlider.vue";
+import MusicSlider from '@/components/MusicSlider.vue';
 import type { TBoardItemProps } from 'env';
 
 // The boardItems here are for example purposes only.

@@ -1,13 +1,13 @@
 <script setup lang="ts">
+import PopupNotification from '@/components/PopupNotification.vue';
 import { ref } from 'vue';
 import { useBreakpointMax } from 'vue-mdbootstrap';
-import PopupNotification from './components/PopupNotification.vue';
 
 const leftDrawer = ref(true);
 const notifOpen = ref(false);
 
 function onContainerResize() {
-  if (useBreakpointMax('xl')) {
+  if (useBreakpointMax('lg')) {
     leftDrawer.value = false;
   }
 }

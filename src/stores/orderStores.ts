@@ -19,7 +19,7 @@ let payment: TPaymentStatus;
 let status: TOrderStatus;
 let rnd: number;
 
-export async function populate(count: number) {
+export async function populate(count: number): Promise<BsArrayStore> {
   const ordersData = new BsArrayStore([], { idProperty: 'orderId' });
   const response = await fetchPersonApi(count);
   const personData = response.results;

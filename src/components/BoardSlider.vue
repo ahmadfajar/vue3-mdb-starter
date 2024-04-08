@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import BoardItem from '@/components/BoardItem.vue';
 import type { TBoardItemProps } from 'env';
 import { reactive, ref } from 'vue';
 import { useGenerateId } from 'vue-mdbootstrap';
-import BoardItem from './BoardItem.vue';
 
 defineProps({
   items: {

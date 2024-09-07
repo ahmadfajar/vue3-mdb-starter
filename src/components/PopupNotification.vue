@@ -10,7 +10,7 @@ const avatarProps = (item: TNotificationMsg): TAvatarOptionProps => ({
   imgSrc: item.avatar,
   text: item.avatar ? undefined : item.fullname.charAt(0),
   size: 40,
-  circle: true
+  circle: true,
 });
 const closePopup = (emitFn: TEventClose) => {
   Helper.defer(() => {
@@ -74,7 +74,7 @@ const closePopup = (emitFn: TEventClose) => {
 
   > .notification-footer {
     border-top: 1px solid rgb(0, 0, 0, 0.175);
-    padding: .875rem 1rem;
+    padding: 0.875rem 1rem;
   }
 
   > .md-list {

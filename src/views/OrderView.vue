@@ -9,47 +9,47 @@ const paymentMenus = ref([
   {
     text: 'Payment Status',
     label: 'All',
-    active: true
+    active: true,
   },
   {
     text: 'Paid',
-    active: false
+    active: false,
   },
   {
     text: 'Unpaid',
-    active: false
+    active: false,
   },
   {
     text: 'Pending',
-    active: false
+    active: false,
   },
   {
     text: 'Failed',
-    active: false
-  }
+    active: false,
+  },
 ]);
 const orderStatusMenus = ref([
   {
     text: 'Order Status',
     label: 'All',
-    active: true
+    active: true,
   },
   {
     text: 'Delivered',
-    active: false
+    active: false,
   },
   {
     text: 'Shipped',
-    active: false
+    active: false,
   },
   {
     text: 'Processing',
-    active: false
+    active: false,
   },
   {
     text: 'Cancelled',
-    active: false
-  }
+    active: false,
+  },
 ]);
 
 onMounted(async () => {
@@ -115,7 +115,7 @@ onMounted(async () => {
                         <span class="caret-down ms-2"></span>
                       </BsChip>
                       <template #content>
-                        <BsListView style="width: 158px;">
+                        <BsListView style="width: 158px">
                           <BsListNav>
                             <BsListNavItem
                               v-for="item in paymentMenus"
@@ -133,7 +133,7 @@ onMounted(async () => {
                         <span class="caret-down ms-2"></span>
                       </BsChip>
                       <template #content>
-                        <BsListView style="width: 138px;">
+                        <BsListView style="width: 138px">
                           <BsListNav>
                             <BsListNavItem
                               v-for="item in orderStatusMenus"

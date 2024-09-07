@@ -51,13 +51,3 @@ npm run build
 # with yarn
 yarn build
 ```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-# with npm
-npm run lint
-
-# with yarn
-yarn lint
-```

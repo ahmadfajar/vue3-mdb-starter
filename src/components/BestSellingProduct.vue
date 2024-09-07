@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { Prop } from 'vue';
 import type { IArrayStore, TProgressBarOptionProps } from 'vue-mdbootstrap';
 
 defineProps<{ source: IArrayStore }>();
@@ -7,7 +6,7 @@ defineProps<{ source: IArrayStore }>();
 const progressProps: TProgressBarOptionProps = {
   height: '.25rem',
   valuePosition: 'end',
-  showValue: true
+  showValue: true,
 };
 </script>
 

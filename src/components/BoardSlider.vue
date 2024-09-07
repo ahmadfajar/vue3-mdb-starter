@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import BoardItem from '@/components/BoardItem.vue';
-import type { TBoardItemProps } from 'env';
+import type { TBoardItemProps } from '@/components/types';
 import { reactive, ref } from 'vue';
 import { useGenerateId } from 'vue-mdbootstrap';
 
 defineProps({
   items: {
-    type: Array<TBoardItemProps>
-  }
+    type: Array<TBoardItemProps>,
+  },
 });
 
 const scrollOffset = ref<number>(0);
 const slider = reactive({
   contentId: useGenerateId(),
   contentWidth: 0,
-  wrapperWidth: 0
+  wrapperWidth: 0,
 });
 
 const touchOrWheelHandler = (deltaX: number) => {

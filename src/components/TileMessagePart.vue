@@ -4,10 +4,10 @@ import { ref } from 'vue';
 const props = defineProps({
   message: {
     type: String,
-    required: true
+    required: true,
   },
   quote: String,
-  badgeColor: String
+  badgeColor: String,
 });
 
 const msgStart = ref<string>();

@@ -1,11 +1,11 @@
 import { fetchPersonApi, randomDate, randomNumber } from '@/mixins/sharedApi';
-import { BsArrayStore, Helper, type TBsModel } from 'vue-mdbootstrap';
+import { BsArrayStore, Helper, type IBsModel } from 'vue-mdbootstrap';
 
 export declare type TPaymentStatus = 'Paid' | 'Unpaid' | 'Pending' | 'Failed';
 
 export declare type TOrderStatus = 'Shipped' | 'Processing' | 'Cancelled' | 'Delivered';
 
-export declare type TOrderRecord = TBsModel & {
+export declare type TOrderRecord = IBsModel & {
   orderId: number;
   orderDate: Date;
   customer: string;

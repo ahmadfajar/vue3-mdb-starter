@@ -18,7 +18,7 @@ function toggleSideDrawer(value: boolean) {
 </script>
 
 <template>
-  <BsAppContainer viewport-height>
+  <BsApp viewport-height>
     <BsAppbar fixed-top shadow>
       <BsButton
         color="secondary"
@@ -62,10 +62,10 @@ function toggleSideDrawer(value: boolean) {
           <BsDivider />
         </div>
         <BsListNav>
-          <BsListNavItem icon="home_outlined" label="Home" path="/" />
-          <BsListNavItem icon="redeem" label="Products" path="/products" />
-          <BsListNavItem icon="assignment_outlined" label="Orders" path="/orders" />
-          <BsListNavItem icon="account_box_outlined" label="Customers" path="/customers" />
+          <BsListNavItem icon="home_outlined" label="Home" path-name="home" />
+          <BsListNavItem icon="redeem" label="Products" path-name="products" />
+          <BsListNavItem icon="assignment_outlined" label="Orders" path-name="orders" />
+          <BsListNavItem icon="account_box_outlined" label="Customers" path-name="customers" />
         </BsListNav>
       </BsListView>
     </BsSideDrawer>
@@ -81,5 +81,5 @@ function toggleSideDrawer(value: boolean) {
       </BsContent>
     </BsContainer>
     <BsNotification />
-  </BsAppContainer>
+  </BsApp>
 </template>

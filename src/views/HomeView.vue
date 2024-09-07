@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import BoardSlider from '@/components/BoardSlider.vue';
 import MusicSlider from '@/components/MusicSlider.vue';
-import type { TBoardItemProps } from 'env';
+import type { TBoardItemProps } from '@/components/types';
 
 // The boardItems here are for example purposes only.
 // You can use Pinia data storage for advanced use.
@@ -11,7 +11,7 @@ const boardItems: TBoardItemProps[] = [
       '/images/avatar-1.jpg',
       '/images/avatar-2.jpg',
       '/images/avatar-5.webp',
-      '/images/avatar-6.webp'
+      '/images/avatar-6.webp',
     ],
     imgSrc:
       'https://knowmax.ai/wp-content/uploads/2021/07/Decision-trees-in-Healthcare-call-centers.jpg',
@@ -20,14 +20,14 @@ const boardItems: TBoardItemProps[] = [
     taskCount: 44,
     commentCount: 12,
     likeCount: 10,
-    dislikeCount: 4
+    dislikeCount: 4,
   },
   {
     avatarSrc: [
       '/images/avatar-1.jpg',
       '/images/avatar-2.jpg',
       '/images/avatar-5.webp',
-      '/images/avatar-6.webp'
+      '/images/avatar-6.webp',
     ],
     imgSrc: 'https://kmhlabs.com/wp-content/uploads/2021/02/Home-Page-KMH-Quality_1188079282.jpg',
     title: 'Post Tracking',
@@ -35,14 +35,14 @@ const boardItems: TBoardItemProps[] = [
     taskCount: 44,
     commentCount: 12,
     likeCount: 10,
-    dislikeCount: 4
+    dislikeCount: 4,
   },
   {
     avatarSrc: [
       '/images/avatar-3.jpg',
       '/images/avatar-7.webp',
       '/images/avatar-5.webp',
-      '/images/avatar-6.webp'
+      '/images/avatar-6.webp',
     ],
     imgSrc: 'https://i1.chainbulletin.com/img/2020/06/744.jpg',
     title: 'Rebuilding',
@@ -50,14 +50,14 @@ const boardItems: TBoardItemProps[] = [
     taskCount: 44,
     commentCount: 12,
     likeCount: 10,
-    dislikeCount: 4
+    dislikeCount: 4,
   },
   {
     avatarSrc: [
       '/images/avatar-7.webp',
       '/images/avatar-2.jpg',
       '/images/avatar-5.webp',
-      '/images/avatar-6.webp'
+      '/images/avatar-6.webp',
     ],
     imgSrc: 'https://www.jadeglobal.com/sites/default/files/2019-07/test-automation_1.jpg',
     title: 'Automation Team',
@@ -65,8 +65,8 @@ const boardItems: TBoardItemProps[] = [
     taskCount: 44,
     commentCount: 12,
     likeCount: 10,
-    dislikeCount: 4
-  }
+    dislikeCount: 4,
+  },
 ];
 </script>
 

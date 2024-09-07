@@ -4,7 +4,7 @@ import { iconComments, iconListCheck } from '@/mixins/icons';
 
 const props = defineProps({
   avatarSrc: {
-    type: Array<string>
+    type: Array<string>,
   },
   imgSrc: String,
   title: String,
@@ -12,10 +12,10 @@ const props = defineProps({
   taskCount: [String, Number],
   commentCount: [String, Number],
   likeCount: [String, Number],
-  dislikeCount: [String, Number]
+  dislikeCount: [String, Number],
 });
 const styles = computed(() => ({
-  'background-image': props.imgSrc ? `url(${props.imgSrc})` : undefined
+  'background-image': props.imgSrc ? `url(${props.imgSrc})` : undefined,
 }));
 </script>
 

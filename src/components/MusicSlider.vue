@@ -7,7 +7,7 @@ const scrollOffset = ref<number>(0);
 const slider = reactive({
   contentId: useGenerateId(),
   contentWidth: 0,
-  wrapperWidth: 0
+  wrapperWidth: 0,
 });
 
 const touchOrWheelHandler = (deltaX: number) => {
@@ -46,7 +46,6 @@ const wheelHandler = (evt: WheelEvent) => {
 const touchHandler = (evt: WheelEvent) => {
   touchOrWheelHandler(evt.deltaX);
 };
-
 </script>
 
 <template>

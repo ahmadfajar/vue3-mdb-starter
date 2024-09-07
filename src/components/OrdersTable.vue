@@ -4,15 +4,15 @@ import {
   badgeOrderStatusIcon,
   badgePaymentColor,
   badgePaymentIcon,
-  type TOrderRecord
+  type TOrderRecord,
 } from '@/stores/orderStores';
 import type { Prop } from 'vue';
 import type { TButtonOptionProps } from 'vue-mdbootstrap';
 
 defineProps({
   sources: {
-    type: Array<TOrderRecord>
-  } as Prop<TOrderRecord[]>
+    type: Array<TOrderRecord>,
+  } as Prop<TOrderRecord[]>,
 });
 
 const btnProps: TButtonOptionProps = {
@@ -20,7 +20,7 @@ const btnProps: TButtonOptionProps = {
   iconSize: 16,
   mode: 'icon',
   flat: true,
-  size: 'xs'
+  size: 'xs',
 };
 </script>
 

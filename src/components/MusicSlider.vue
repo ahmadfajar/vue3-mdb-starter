@@ -40,7 +40,11 @@ const { touchHandler, wheelHandler } = useTouchOrWheel(slider, scrollOffset);
           </MusicInfo>
         </div>
         <div class="slider-item">
-          <MusicInfo class="bg-cyan-900 text-light h-full" text="Foster the People" title="Supermodel">
+          <MusicInfo
+            class="bg-cyan-800 text-light h-full"
+            text="Foster the People"
+            title="Supermodel"
+          >
             <template #button>
               <BsButton
                 color="light"
@@ -59,7 +63,11 @@ const { touchHandler, wheelHandler } = useTouchOrWheel(slider, scrollOffset);
           </MusicInfo>
         </div>
         <div class="slider-item">
-          <MusicInfo class="bg-dark-pink text-light h-full" text="Ellie Goulding" title="Halcyon Days">
+          <MusicInfo
+            class="bg-dark-pink text-light h-full"
+            text="Ellie Golding"
+            title="Halcyon Days"
+          >
             <template #button>
               <div>
                 <BsButton

@@ -21,7 +21,7 @@ if (badgePos > -1) {
 <template>
   <p class="mb-0">
     {{ msgStart || message }}
-    <BsBadge v-if="badge" :color="badgeColor" type="label">{{ badge }}</BsBadge>
+    <BsBadge v-if="badge" :color="badgeColor" type="pill">{{ badge }}</BsBadge>
     {{ msgEnd }}
   </p>
   <blockquote v-if="quote" class="blockquote">{{ quote }}</blockquote>

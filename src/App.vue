@@ -30,7 +30,7 @@ function toggleSideDrawer(value: boolean) {
       <div class="app-logo d-none d-md-flex">
         <img alt="Vue MDBootstrap" rel="preload" src="/images/logo.png" />
       </div>
-      <BsAppbarTitle class="d-none d-lg-flex">My Application</BsAppbarTitle>
+      <BsAppbarTitle class="d-none d-md-flex">My Application</BsAppbarTitle>
       <BsSpacer />
       <BsAppbarItems class="pe-3">
         <BsButton color="secondary" flat icon="search" mode="icon" />
@@ -54,14 +54,14 @@ function toggleSideDrawer(value: boolean) {
         <div class="d-lg-none">
           <div class="flex" style="margin: 0.5rem 0.5rem 1rem 1rem">
             <BsAvatar circle img-src="/images/avatar-2.jpg" size="82" />
-            <div class="flex flex-col justify-center ms-3">
+            <div class="flex flex-col justify-between ms-3">
               <div class="h4">John Wick</div>
-              <BsButton size="sm" outlined>Logout</BsButton>
+              <BsButton size="sm" tonal color="success">Logout</BsButton>
             </div>
           </div>
           <BsDivider />
         </div>
-        <BsListNav>
+        <BsListNav class="mt-3">
           <BsListNavItem icon="home_outlined" label="Home" path-name="home" />
           <BsListNavItem icon="redeem" label="Products" path-name="products" />
           <BsListNavItem icon="assignment_outlined" label="Orders" path-name="orders" />

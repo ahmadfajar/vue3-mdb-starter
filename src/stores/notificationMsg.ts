@@ -22,7 +22,7 @@ export const msgData = ref<TNotificationMsg[]>([
     unread: true,
     avatar: '/images/avatar-1.jpg',
     badge: 'Review',
-    badgeColor: 'secondary'
+    badgeColor: 'default'
   },
   {
     id: Helper.uuid(true),

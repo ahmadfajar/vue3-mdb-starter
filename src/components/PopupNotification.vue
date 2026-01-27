@@ -22,7 +22,7 @@ const closePopup = (emitFn: TEventClose) => {
 <template>
   <div class="notification-container">
     <div class="notification-header">Notification</div>
-    <BsListView individual-state>
+    <BsListView individual-state item-rounded>
       <template v-for="(item, index) in msgData" :key="item.id">
         <BsListTile v-model:active="item.unread" navigable>
           <BsListTileLeading class="pt-1">
@@ -48,12 +48,18 @@ const closePopup = (emitFn: TEventClose) => {
             {{ item.published }}
           </BsListTileAction>
         </BsListTile>
-        <BsDivider v-if="index + 1 < msgData.length" :key="item.id + index" />
+        <BsDivider
+          v-if="index + 1 < msgData.length"
+          :key="item.id + index"
+          style="margin-left: -6px; margin-right: -6px"
+        />
       </template>
     </BsListView>
     <div class="notification-footer">
       <div class="d-grid gap-2">
-        <BsButton flat @click="closePopup($emit)"> View all notifications </BsButton>
+        <BsButton color="primary" flat @click="closePopup($emit)">
+          View all notifications
+        </BsButton>
       </div>
     </div>
   </div>

@@ -43,9 +43,9 @@ const btnProps = {
           <td>
             <BsBadge
               :color="badgePaymentColor(item)"
-              class="inline-flex items-center"
-              outlined
+              class="badge-tonal inline-flex items-center"
               type="pill"
+              outlined
             >
               <BsIcon :icon="badgePaymentIcon(item)" size="18" />
               <span class="ms-2">{{ item.paymentStatus }}</span>
@@ -57,7 +57,6 @@ const btnProps = {
               v-if="badgeOrderStatusIcon(item)"
               :color="badgeOrderStatusColor(item)"
               class="inline-flex items-center"
-              outlined
             >
               <BsIcon :icon="badgeOrderStatusIcon(item)" size="18" />
               <span class="ms-2">{{ item.orderStatus }}</span>
@@ -66,7 +65,6 @@ const btnProps = {
               v-else
               :color="badgeOrderStatusColor(item)"
               class="inline-flex items-center"
-              outlined
             >
               {{ item.orderStatus }}
             </BsBadge>

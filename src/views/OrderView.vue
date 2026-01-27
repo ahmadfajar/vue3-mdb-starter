@@ -71,7 +71,7 @@ onMounted(async () => {
                 <BsDropdownMenu placement="bottom-right" space="3">
                   <BsButton color="primary" outlined title="Export order">Export</BsButton>
                   <template #content>
-                    <BsListView space-around="both">
+                    <BsListView>
                       <div class="dropdown-menu">
                         <div class="dropdown-header">OPTIONS</div>
                         <a class="dropdown-item rounded" href="#">
@@ -113,7 +113,7 @@ onMounted(async () => {
                         <span class="caret-down ms-2"></span>
                       </BsChip>
                       <template #content>
-                        <BsListView style="width: 158px">
+                        <BsListView style="width: 158px" item-rounded>
                           <BsListNav>
                             <BsListNavItem
                               v-for="item in paymentMenus"
@@ -131,7 +131,7 @@ onMounted(async () => {
                         <span class="caret-down ms-2"></span>
                       </BsChip>
                       <template #content>
-                        <BsListView style="width: 138px">
+                        <BsListView style="width: 138px" item-rounded>
                           <BsListNav>
                             <BsListNavItem
                               v-for="item in orderStatusMenus"

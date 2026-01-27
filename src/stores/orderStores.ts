@@ -58,7 +58,7 @@ export async function populate(count: number): Promise<BsArrayStore> {
       total: Helper.roundNumber(randomNumber(200.0, 5000.0), 2),
       checked: false
     };
-    ordersData.append(<never>item);
+    ordersData.append(item);
   }
 
   return ordersData;
@@ -90,13 +90,13 @@ export function badgePaymentIcon(item: TOrderRecord): string {
 
 export function badgeOrderStatusColor(item: TOrderRecord): string {
   if (item.orderStatus === 'Delivered') {
-    return 'text-success bg-rgba-green-slight';
+    return 'bg-green-600';
   } else if (item.orderStatus === 'Shipped') {
-    return 'text-primary bg-rgba-blue-slight';
+    return 'bg-light-blue';
   } else if (item.orderStatus === 'Processing') {
-    return 'text-default bg-rgba-deep-purple-slight';
+    return 'bg-rgba-deep-purple-strong';
   } else {
-    return 'text-danger bg-rgba-red-slight';
+    return 'bg-danger';
   }
 }
 

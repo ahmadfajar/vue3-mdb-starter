@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import MusicInfo from '@/components/MusicInfo.vue';
+import { useTouchOrWheel } from '@/mixins/sharedApi.ts';
 import { reactive, ref } from 'vue';
 import { useGenerateId } from 'vue-mdbootstrap';
 
@@ -10,42 +11,7 @@ const slider = reactive({
   wrapperWidth: 0,
 });
 
-const touchOrWheelHandler = (deltaX: number) => {
-  const el = document.getElementById(slider.contentId);
-
-  if (el) {
-    slider.contentWidth = el?.clientWidth ?? slider.contentWidth;
-    const parent = el.parentElement;
-    slider.wrapperWidth = parent?.clientWidth ?? slider.wrapperWidth;
-    const newOffset = scrollOffset.value + deltaX;
-    const deltaW = slider.contentWidth - slider.wrapperWidth;
-    const deltaW1 = deltaW + 200;
-    scrollOffset.value =
-      newOffset > 200 ? 200 : Math.abs(newOffset) > deltaW1 ? -deltaW1 : newOffset;
-    el.style.transform = `translateX(${scrollOffset.value}px)`;
-
-    if (scrollOffset.value > 0 || scrollOffset.value < -deltaW) {
-      window.requestAnimationFrame(() => {
-        if (scrollOffset.value > 0) {
-          scrollOffset.value = 0;
-          el.style.transform = `translateX(${scrollOffset.value}px)`;
-        } else if (scrollOffset.value < -deltaW) {
-          scrollOffset.value = -deltaW;
-          el.style.transform = `translateX(${scrollOffset.value}px)`;
-        }
-      });
-    }
-  }
-};
-
-const wheelHandler = (evt: WheelEvent) => {
-  (evt.deltaX < 0 || evt.deltaX > 0) && evt.preventDefault();
-  window.requestAnimationFrame(() => touchOrWheelHandler(evt.deltaX * -1));
-};
-
-const touchHandler = (evt: WheelEvent) => {
-  touchOrWheelHandler(evt.deltaX);
-};
+const { touchHandler, wheelHandler } = useTouchOrWheel(slider, scrollOffset);
 </script>
 
 <template>
@@ -58,13 +24,13 @@ const touchHandler = (evt: WheelEvent) => {
       <div :id="slider.contentId" class="slider-wrapper">
         <div class="slider-item">
           <MusicInfo
-            class="bg-mdb-color darken-1 h-100"
-            title="Unlimited music now"
+            class="bg-deep-purple-700 text-light h-full"
             text="Listen to your favorite artists and albums whenever and wherever, online and offline."
+            title="Unlimited music now"
           >
             <template #button>
               <BsButton
-                color="purple"
+                color="default"
                 size="sm"
                 @click="$notification.add('You can implement LISTEN NOW on your own.')"
               >
@@ -74,13 +40,12 @@ const touchHandler = (evt: WheelEvent) => {
           </MusicInfo>
         </div>
         <div class="slider-item">
-          <MusicInfo class="bg-cyan darken-4 h-100" title="Supermodel" text="Foster the People">
+          <MusicInfo class="bg-cyan-900 text-light h-full" text="Foster the People" title="Supermodel">
             <template #button>
               <BsButton
                 color="light"
-                size="sm"
                 outlined
-                style="--bs-btn-color: #ccced0; --bs-btn-hover-color: #eee"
+                size="sm"
                 @click="$notification.add('You can implement START RADIO on your own.')"
               >
                 START RADIO
@@ -88,29 +53,28 @@ const touchHandler = (evt: WheelEvent) => {
             </template>
             <template #media>
               <div class="card-image">
-                <img src="/images/foster.jpg" alt="Supermodel" class="rounded" />
+                <img alt="Supermodel" class="rounded" src="/images/foster.jpg" />
               </div>
             </template>
           </MusicInfo>
         </div>
         <div class="slider-item">
-          <MusicInfo class="bg-dark-pink h-100" title="Halcyon Days" text="Ellie Goulding">
+          <MusicInfo class="bg-dark-pink text-light h-full" text="Ellie Goulding" title="Halcyon Days">
             <template #button>
               <div>
                 <BsButton
                   color="light"
-                  mode="icon"
                   icon="play_arrow"
-                  size="sm"
-                  style="--bs-btn-color: #ccced0; --bs-btn-hover-color: #eee"
+                  mode="icon"
                   outlined
+                  size="sm"
                   @click="$notification.add('You can implement this on your own.')"
                 />
               </div>
             </template>
             <template #media>
               <div class="card-image">
-                <img src="/images/halcyon.jpg" alt="Halcyon Days" class="rounded" />
+                <img alt="Halcyon Days" class="rounded" src="/images/halcyon.jpg" />
               </div>
             </template>
           </MusicInfo>
@@ -126,8 +90,7 @@ const touchHandler = (evt: WheelEvent) => {
   width: 100%;
   position: relative;
 
-  .card {
-    --bs-card-color: #fff;
+  .md-card {
     width: 356px;
   }
 

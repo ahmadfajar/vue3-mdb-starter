@@ -74,7 +74,7 @@ const boardItems: TBoardItemProps[] = [
   <div class="my-5">
     <div class="col-md-8 mx-auto text-center">
       <img src="/images/logo.png" alt="Vue MDBootstrap" />
-      <h1 class="display-1 md-fw-semibold mt-4 lh-sm">Hello Application</h1>
+      <h1 class="display-1 font-weight-semibold mt-4 lh-sm">Hello Application</h1>
       <p class="lead my-4 fs-3">
         You have successfully implemented Vue MDBootstrap into your apps. Now you can start coding
         and build powerful web apps with amazing UI.

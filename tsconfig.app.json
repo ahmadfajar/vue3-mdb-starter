@@ -1,19 +1,58 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.json",
-  "include": ["src/**/*.vue", "src/**/*.ts"],
-  "exclude": ["src/**/__tests__/*", "node_modules"],
+  "include": [
+    "src/**/*.vue",
+    "src/**/*.ts",
+    "vite-env.d.ts",
+  ],
+  "exclude": [
+    "src/**/__tests__/*",
+    "node_modules"
+  ],
   "compilerOptions": {
-    "composite": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
+    "target": "ESNext",
+    "module": "ESNext",
     "lib": [
-      "ES2021",
+      "ES2024",
       "DOM",
-      "DOM.Iterable"
+      "DOM.Iterable",
+      "ESNext.Array",
+      "ESNext.Collection",
+      "ESNext.Promise",
+      "ESNext.String",
+      "ESNext.Symbol"
     ],
-    // Set to empty to avoid accidental inclusion of unwanted types
-    "types": []
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+    },
+    "verbatimModuleSyntax": true,
+    "useDefineForClassFields": true,
+    "forceConsistentCasingInFileNames": true,
+    "libReplacement": false,
+    "skipLibCheck": true,
+    
+    /* Bundler mode */
+    "noEmit": true,
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+
+    /* Required in Vue projects */
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "composite": true,
+    "removeComments": true,
+    "sourceMap": false,
+
+    /* Linting */
+    "strict": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true
   }
 }

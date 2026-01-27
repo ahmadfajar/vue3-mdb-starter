@@ -1,28 +1,25 @@
 <script setup lang="ts">
-defineProps({
-  title: String,
-  text: String,
-});
+defineProps<{ title?: string; text?: string }>();
 </script>
 
 <template>
-  <BsCard border-off>
-    <div v-if="$slots.media" class="d-flex justify-content-between">
-      <BsCardBody class="d-flex flex-column">
+  <BsCard>
+    <div v-if="$slots.media" class="flex justify-between">
+      <BsCardBody class="flex flex-col">
         <BsCardContent type="title">{{ title }}</BsCardContent>
-        <BsCardContent class="flex-fill text-truncate opacity-50">
+        <BsCardContent class="flex-fill text-truncate opacity-75">
           <slot name="text">{{ text }}</slot>
         </BsCardContent>
-        <slot name="button"></slot>
+        <slot name="button" />
       </BsCardBody>
-      <slot name="media"></slot>
+      <slot name="media" />
     </div>
-    <BsCardBody v-else class="d-flex flex-column">
+    <BsCardBody v-else class="flex flex-col">
       <BsCardContent type="title">{{ title }}</BsCardContent>
-      <BsCardContent type="text" class="flex-fill text-truncate opacity-50">
+      <BsCardContent class="flex-fill text-truncate opacity-75" type="text">
         <slot name="text">{{ text }}</slot>
       </BsCardContent>
-      <slot name="button"></slot>
+      <slot name="button" />
     </BsCardBody>
   </BsCard>
 </template>

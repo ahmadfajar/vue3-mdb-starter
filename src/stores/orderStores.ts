@@ -66,13 +66,13 @@ export async function populate(count: number): Promise<BsArrayStore> {
 
 export function badgePaymentColor(item: TOrderRecord): string {
   if (item.paymentStatus === 'Paid') {
-    return 'success bg-rgba-green-slight';
+    return 'text-success bg-rgba-green-slight';
   } else if (item.paymentStatus === 'Unpaid') {
-    return 'info bg-rgba-light-blue-slight';
+    return 'text-primary bg-rgba-light-blue-slight';
   } else if (item.paymentStatus === 'Pending') {
-    return 'warning bg-rgba-amber-slight';
+    return 'text-warning-color-dark bg-rgba-amber-slight';
   } else {
-    return 'danger bg-rgba-red-slight';
+    return 'text-danger bg-rgba-red-slight';
   }
 }
 
@@ -90,13 +90,13 @@ export function badgePaymentIcon(item: TOrderRecord): string {
 
 export function badgeOrderStatusColor(item: TOrderRecord): string {
   if (item.orderStatus === 'Delivered') {
-    return 'success bg-rgba-green-slight';
+    return 'text-success bg-rgba-green-slight';
   } else if (item.orderStatus === 'Shipped') {
-    return 'info bg-rgba-blue-slight';
+    return 'text-primary bg-rgba-blue-slight';
   } else if (item.orderStatus === 'Processing') {
-    return 'default bg-rgba-deep-purple-slight';
+    return 'text-default bg-rgba-deep-purple-slight';
   } else {
-    return 'danger bg-rgba-red-slight';
+    return 'text-danger bg-rgba-red-slight';
   }
 }
 

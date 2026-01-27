@@ -3,11 +3,11 @@ import type { IArrayStore, TProgressBarOptionProps } from 'vue-mdbootstrap';
 
 defineProps<{ source: IArrayStore }>();
 
-const progressProps: TProgressBarOptionProps = {
+const progressProps = {
   height: '.25rem',
   valuePosition: 'end',
   showValue: true,
-};
+} satisfies TProgressBarOptionProps;
 </script>
 
 <template>
@@ -24,20 +24,22 @@ const progressProps: TProgressBarOptionProps = {
       <tbody class="align-middle" style="font-size: 0.875rem">
         <tr v-for="item in source.dataItems" :key="item.id as string">
           <td>
-            <div class="d-flex align-items-center position-relative">
-              <img :src="item.image as string" width="60" :alt="item.product as string" />
+            <div class="flex items-center relative">
+              <img :alt="item.product as string" :src="item.image as string" width="60" />
               <div class="ms-3">
-                <div class="md-fw-semibold text-nowrap">
-                  <a class="text-dark stretched-link" href="#!">{{ item.product }}</a>
-                </div>
-                <div class="text-grey-600 small">{{ item.category }}</div>
+                <a class="block font-weight-semibold text-nowrap" href="#">{{ item.product }}</a>
+                <div class="text-subtle-secondary small">{{ item.category }}</div>
               </div>
             </div>
           </td>
           <td>{{ item.price }}</td>
           <td>{{ item.orders }}</td>
           <td>
-            <BsProgressBar :model-value="item.revenue as number" v-bind="progressProps" />
+            <BsProgressBar
+              v-bind="progressProps"
+              :model-value="item.revenue as number"
+              style="--md-progress-font-size: 0.7rem"
+            />
           </td>
         </tr>
       </tbody>

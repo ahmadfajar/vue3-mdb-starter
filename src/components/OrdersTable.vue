@@ -6,22 +6,17 @@ import {
   badgePaymentIcon,
   type TOrderRecord,
 } from '@/stores/orderStores';
-import type { Prop } from 'vue';
 import type { TButtonOptionProps } from 'vue-mdbootstrap';
 
-defineProps({
-  sources: {
-    type: Array<TOrderRecord>,
-  } as Prop<TOrderRecord[]>,
-});
+defineProps<{ sources: TOrderRecord[] }>();
 
-const btnProps: TButtonOptionProps = {
-  color: 'grey',
+const btnProps = {
+  color: 'secondary',
   iconSize: 16,
   mode: 'icon',
   flat: true,
   size: 'xs',
-};
+} satisfies TButtonOptionProps;
 </script>
 
 <template>
@@ -46,32 +41,40 @@ const btnProps: TButtonOptionProps = {
           </td>
           <td class="text-nowrap">{{ item.customer }}</td>
           <td>
-            <BsChip
+            <BsBadge
               :color="badgePaymentColor(item)"
-              :icon="badgePaymentIcon(item)"
-              icon-variant="outlined"
-              size="sm"
-              readonly
+              class="inline-flex items-center"
+              outlined
+              type="pill"
             >
-              {{ item.paymentStatus }}
-            </BsChip>
+              <BsIcon :icon="badgePaymentIcon(item)" size="18" />
+              <span class="ms-2">{{ item.paymentStatus }}</span>
+            </BsBadge>
           </td>
           <td class="text-end pe-3">${{ item.total }}</td>
           <td>
-            <BsChip
+            <BsBadge
+              v-if="badgeOrderStatusIcon(item)"
               :color="badgeOrderStatusColor(item)"
-              :icon="badgeOrderStatusIcon(item)"
-              icon-variant="outlined"
-              size="sm"
-              readonly
+              class="inline-flex items-center"
+              outlined
+            >
+              <BsIcon :icon="badgeOrderStatusIcon(item)" size="18" />
+              <span class="ms-2">{{ item.orderStatus }}</span>
+            </BsBadge>
+            <BsBadge
+              v-else
+              :color="badgeOrderStatusColor(item)"
+              class="inline-flex items-center"
+              outlined
             >
               {{ item.orderStatus }}
-            </BsChip>
+            </BsBadge>
           </td>
           <td class="text-nowrap">
             <BsButton v-bind="btnProps" icon="visibility" title="View" />
             <BsButton v-bind="btnProps" icon="edit" title="Edit" />
-            <BsButton v-bind="btnProps" icon="delete" title="Delete" />
+            <BsButton v-bind="btnProps" color="danger" icon="delete" title="Delete" />
           </td>
         </tr>
       </tbody>

@@ -1,12 +1,15 @@
+import type { AllowedComponentProps, ComponentCustomProps, VNodeProps } from "vue";
+import type { Numberish } from 'vue-mdbootstrap';
+
 export declare type TBoardItemProps = {
   avatarSrc?: string[];
   imgSrc?: string;
   title?: string;
   description?: string;
-  taskCount?: string | number;
-  commentCount?: string | number;
-  likeCount?: string | number;
-  dislikeCount?: string | number;
+  taskCount?: Numberish;
+  commentCount?: Numberish;
+  likeCount?: Numberish;
+  dislikeCount?: Numberish;
 };
 
 export declare const BoardItem: {

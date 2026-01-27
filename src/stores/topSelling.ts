@@ -21,7 +21,7 @@ export const topSelling = new BsArrayStore([
   },
   {
     id: Helper.uuid(true),
-    product: 'Amazefit Pace',
+    product: 'Amazement Pace',
     category: 'Smartwatch',
     image: '/images/products/2.jpg',
     price: '$179.98',
@@ -57,7 +57,7 @@ export const topSelling = new BsArrayStore([
   },
   {
     id: Helper.uuid(true),
-    product: 'Sungait Lightweight Sunglass',
+    product: 'Sungait Lightweight SunGlass',
     category: 'Jacket',
     image: '/images/products/4.jpg',
     price: '$219.98',

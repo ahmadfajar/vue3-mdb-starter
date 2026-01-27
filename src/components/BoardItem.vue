@@ -1,19 +1,9 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import type { TBoardItemProps } from '@/components/types';
 import { iconComments, iconListCheck } from '@/mixins/icons';
+import { computed } from 'vue';
 
-const props = defineProps({
-  avatarSrc: {
-    type: Array<string>,
-  },
-  imgSrc: String,
-  title: String,
-  description: String,
-  taskCount: [String, Number],
-  commentCount: [String, Number],
-  likeCount: [String, Number],
-  dislikeCount: [String, Number],
-});
+const props = defineProps<TBoardItemProps>();
 const styles = computed(() => ({
   'background-image': props.imgSrc ? `url(${props.imgSrc})` : undefined,
 }));
@@ -21,36 +11,36 @@ const styles = computed(() => ({
 
 <template>
   <BsCard shadow>
-    <div class="card-img-top d-flex align-items-end p-2" :style="styles">
+    <div :style="styles" class="card-img-top flex items-end p-2">
       <div class="avatar-group">
         <BsAvatar
           v-for="src in avatarSrc"
-          :key="src"
           :img-src="src"
-          size="32"
+          :key="src"
           border="1"
-          border-color="white"
+          border-color="light"
           circle
+          size="32"
         />
       </div>
     </div>
     <BsCardBody>
       <BsCardContent type="title">{{ title }}</BsCardContent>
       <BsCardContent>{{ description }}</BsCardContent>
-      <div class="d-flex text-grey-600">
-        <div class="d-inline-flex align-items-center">
+      <div class="flex text-subtle-secondary">
+        <div class="inline-flex items-center">
           <iconListCheck size="18" />
           <span class="ps-2" style="width: 50px">{{ taskCount }}</span>
         </div>
-        <div class="d-inline-flex align-items-center">
+        <div class="inline-flex items-center">
           <iconComments size="18" />
           <span class="ps-2" style="width: 50px">{{ commentCount }}</span>
         </div>
-        <div class="d-inline-flex md-link">
+        <div class="inline-flex md-link">
           <BsIcon icon="thumb_up" />
           <span class="ps-2" style="width: 50px">{{ likeCount }}</span>
         </div>
-        <div class="d-inline-flex md-link">
+        <div class="inline-flex md-link">
           <BsIcon icon="thumb_down" />
           <span class="ps-2" style="width: 50px">{{ dislikeCount }}</span>
         </div>

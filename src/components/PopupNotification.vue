@@ -8,7 +8,7 @@ defineEmits(['close']);
 
 const avatarProps = (item: TNotificationMsg): TAvatarOptionProps => ({
   imgSrc: item.avatar,
-  text: item.avatar ? undefined : item.fullname.charAt(0),
+  text: item.avatar ? undefined : item.fullName.charAt(0),
   size: 40,
   circle: true,
 });
@@ -26,16 +26,20 @@ const closePopup = (emitFn: TEventClose) => {
       <template v-for="(item, index) in msgData" :key="item.id">
         <BsListTile v-model:active="item.unread" navigable>
           <BsListTileLeading class="pt-1">
-            <BsAvatar v-bind="avatarProps(item)" class="bg-grey-300" />
+            <BsAvatar
+              v-bind="avatarProps(item)"
+              class="text-bg-secondary"
+              style="font-size: 1.2em"
+            />
           </BsListTileLeading>
           <BsListTileContent multi-line>
-            <BsListTileTitle class="fw-semibold">
-              {{ item.fullname }}
+            <BsListTileTitle class="font-weight-semibold">
+              {{ item.fullName }}
             </BsListTileTitle>
             <BsListTileSubtitle>
               <TileMessagePart
-                :message="item.message"
                 :badge-color="item.badgeColor"
+                :message="item.message"
                 :quote="item.quote"
               />
             </BsListTileSubtitle>
@@ -49,9 +53,7 @@ const closePopup = (emitFn: TEventClose) => {
     </BsListView>
     <div class="notification-footer">
       <div class="d-grid gap-2">
-        <BsButton color="primary-color-dark" flat @click="closePopup($emit)">
-          View all notifications
-        </BsButton>
+        <BsButton flat @click="closePopup($emit)"> View all notifications </BsButton>
       </div>
     </div>
   </div>
@@ -59,21 +61,21 @@ const closePopup = (emitFn: TEventClose) => {
 
 <style lang="scss">
 .notification-container {
-  border-radius: var(--bs-border-radius);
+  border-radius: var(--md-radius);
   display: flex;
   flex-direction: column;
   max-height: 530px;
   overflow: hidden;
 
   > .notification-header {
-    border-bottom: 1px solid rgb(0, 0, 0, 0.175);
+    border-bottom: 1px solid var(--border-translucent);
     font-size: 110%;
     font-weight: bold;
     padding: 1rem;
   }
 
   > .notification-footer {
-    border-top: 1px solid rgb(0, 0, 0, 0.175);
+    border-top: 1px solid var(--border-translucent);
     padding: 0.875rem 1rem;
   }
 
@@ -81,7 +83,7 @@ const closePopup = (emitFn: TEventClose) => {
     --md-listview-padding-y: 0;
 
     .blockquote {
-      color: #888;
+      color: var(--foreground-subtle-secondary);
       font-size: 0.95rem;
       margin-bottom: 0.5rem;
       border-left: 3px solid #d6d5d5;

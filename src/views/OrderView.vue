@@ -3,7 +3,7 @@ import OrdersTable from '@/components/OrdersTable.vue';
 import { populate, type TOrderRecord } from '@/stores/orderStores';
 import { onMounted, ref, shallowRef } from 'vue';
 
-const ordersData = shallowRef<TOrderRecord[]>();
+const ordersData = shallowRef<TOrderRecord[]>([]);
 const search = ref<string>();
 const paymentMenus = ref([
   {
@@ -65,34 +65,34 @@ onMounted(async () => {
     <div class="mt-4">
       <BsCard border-off class="shadow">
         <BsCardBody>
-          <div class="row mb-4 align-items-center">
+          <div class="row mb-2 items-center">
             <div class="col-xl-4 order-xl-1">
-              <div class="d-flex justify-content-end">
+              <div class="flex justify-end md-gap-x-2">
                 <BsDropdownMenu placement="bottom-right" space="3">
-                  <BsButton color="default-color" title="Export order" outlined>Export</BsButton>
+                  <BsButton color="primary" outlined title="Export order">Export</BsButton>
                   <template #content>
                     <BsListView space-around="both">
                       <div class="dropdown-menu">
                         <div class="dropdown-header">OPTIONS</div>
-                        <a href="#" class="dropdown-item rounded">
-                          <BsAvatar class="text-grey-600" icon="content_copy" size="26" />
+                        <a class="dropdown-item rounded" href="#">
+                          <BsIcon icon="content_copy" size="24" />
                           <span class="ms-3">Copy</span>
                         </a>
-                        <a href="#" class="dropdown-item rounded">
-                          <BsAvatar class="text-grey-600" icon="print_outlined" size="26" />
+                        <a class="dropdown-item rounded" href="#">
+                          <BsIcon icon="print_outlined" size="24" />
                           <span class="ms-3">Print</span>
                         </a>
                         <div class="dropdown-divider"></div>
                         <div class="dropdown-header">DOWNLOAD OPTIONS</div>
-                        <a href="#" class="dropdown-item rounded">
+                        <a class="dropdown-item rounded" href="#">
                           <BsAvatar img-src="/images/excel-icon.svg" size="20" />
                           <span class="ms-3">Excel</span>
                         </a>
-                        <a href="#" class="dropdown-item rounded">
+                        <a class="dropdown-item rounded" href="#">
                           <BsAvatar img-src="/images/csv-icon.svg" size="20" />
                           <span class="ms-3">.CSV</span>
                         </a>
-                        <a href="#" class="dropdown-item rounded">
+                        <a class="dropdown-item rounded" href="#">
                           <BsAvatar img-src="/images/pdf-icon.svg" size="20" />
                           <span class="ms-3">PDF</span>
                         </a>
@@ -100,15 +100,13 @@ onMounted(async () => {
                     </BsListView>
                   </template>
                 </BsDropdownMenu>
-                <BsButton color="default-color" title="Add new order" icon="add">
-                  New Order
-                </BsButton>
+                <BsButton color="primary" icon="add" title="Add new order"> New Order </BsButton>
               </div>
             </div>
             <div class="col-xl-8 mt-3 mt-xl-0">
-              <div class="row align-items-center">
+              <div class="row items-center">
                 <div class="col-md-6 col-xl-auto order-md-1">
-                  <div class="d-flex justify-content-end">
+                  <div class="flex justify-end md-gap-x-1">
                     <BsDropdownMenu space="1">
                       <BsChip outlined>
                         <span>{{ paymentMenus.find((it) => it.active === true)?.text }}</span>
@@ -157,8 +155,8 @@ onMounted(async () => {
               </div>
             </div>
           </div>
-          <OrdersTable :sources="ordersData" />
         </BsCardBody>
+        <OrdersTable :sources="ordersData" class="mt-0" />
       </BsCard>
     </div>
   </div>

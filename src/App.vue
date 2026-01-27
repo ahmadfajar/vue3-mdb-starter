@@ -19,44 +19,44 @@ function toggleSideDrawer(value: boolean) {
 
 <template>
   <BsApp viewport-height>
-    <BsAppbar fixed-top shadow>
+    <BsAppbar fixed-top class="md-shadow">
       <BsButton
         color="secondary"
+        flat
         icon="menu"
         mode="icon"
-        flat
         @click="toggleSideDrawer(leftDrawer)"
       />
       <div class="app-logo d-none d-md-flex">
-        <img src="/images/logo.png" alt="Vue MDBootstrap" rel="preload" />
+        <img alt="Vue MDBootstrap" rel="preload" src="/images/logo.png" />
       </div>
       <BsAppbarTitle class="d-none d-lg-flex">My Application</BsAppbarTitle>
       <BsSpacer />
       <BsAppbarItems class="pe-3">
-        <BsButton mode="icon" icon="search" color="secondary" flat />
+        <BsButton color="secondary" flat icon="search" mode="icon" />
         <BsDropdownMenu
           v-model:open="notifOpen"
           :content-click-close="false"
           placement="bottom-right"
           space="4"
         >
-          <BsButton mode="icon" icon="notifications" color="secondary" flat />
+          <BsButton color="secondary" flat icon="notifications" mode="icon" />
           <template #content>
             <PopupNotification @close="notifOpen = false" />
           </template>
         </BsDropdownMenu>
-        <BsButton mode="icon" icon="settings" color="secondary" flat />
-        <BsAvatar img-src="/images/avatar-2.jpg" class="ms-2" size="46" circle />
+        <BsButton color="secondary" flat icon="settings" mode="icon" />
+        <BsAvatar circle class="ms-2" img-src="/images/avatar-2.jpg" size="46" />
       </BsAppbarItems>
     </BsAppbar>
-    <BsSideDrawer v-model:open="leftDrawer" position="left" clipped fixed-layout>
-      <BsListView color="stylish-color" space-around="both" item-rounded-pill>
+    <BsSideDrawer v-model:open="leftDrawer" clipped fixed-layout position="left">
+      <BsListView item-rounded-pill space-around="both">
         <div class="d-lg-none">
-          <div class="d-flex" style="margin: 0.5rem 0.5rem 1rem 1rem">
-            <BsAvatar img-src="/images/avatar-2.jpg" size="82" circle />
-            <div class="d-flex flex-column justify-content-center ms-3">
-              <div class="h5 text-white">John Wick</div>
-              <a href="#" class="text-grey-500 text-decoration-none">Logout</a>
+          <div class="flex" style="margin: 0.5rem 0.5rem 1rem 1rem">
+            <BsAvatar circle img-src="/images/avatar-2.jpg" size="82" />
+            <div class="flex flex-col justify-center ms-3">
+              <div class="h4">John Wick</div>
+              <BsButton size="sm" outlined>Logout</BsButton>
             </div>
           </div>
           <BsDivider />
@@ -73,7 +73,7 @@ function toggleSideDrawer(value: boolean) {
       <BsContent>
         <main class="container-fluid px-lg-4 px-xl-5">
           <RouterView v-slot="{ Component }">
-            <Transition name="fade-fast" mode="out-in">
+            <Transition mode="out-in" name="fade-fast">
               <component :is="Component" />
             </Transition>
           </RouterView>

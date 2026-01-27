@@ -1,14 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import type { TContextColor } from 'vue-mdbootstrap';
 
-const props = defineProps({
-  message: {
-    type: String,
-    required: true,
-  },
-  quote: String,
-  badgeColor: String,
-});
+const props = defineProps<{ message: string; quote?: string; badgeColor?: TContextColor }>();
 
 const msgStart = ref<string>();
 const msgEnd = ref<string>();
@@ -21,13 +15,11 @@ if (badgePos > -1) {
   const posEnd = substr.indexOf('</badge>');
   badge.value = substr.substring(0, posEnd);
   msgEnd.value = substr.substring(posEnd + 8);
-} else {
-  props.message;
 }
 </script>
 
 <template>
-  <p>
+  <p class="mb-0">
     {{ msgStart || message }}
     <BsBadge v-if="badge" :color="badgeColor" type="label">{{ badge }}</BsBadge>
     {{ msgEnd }}

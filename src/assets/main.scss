@@ -8,7 +8,6 @@
   --sidedrawer-item-active-foreground: oklch(0.98 0 0);
   --sidedrawer-item-active-foreground-secondary: oklch(0.89 0.03 173.82);
   --sidedrawer-item-hover-background: oklch(0.39 0.07 170.62 / 0.3);
-  //--sidedrawer-item-hover-background: oklch(46.85 0.12 293.75 / 0.1);
 }
 
 .fade-fast-enter-active,
@@ -115,7 +114,7 @@
   }
 
   > .md-list {
-    --md-listview-item-gap: 1px;
+    --md-listview-item-gap: 2px;
   }
 }
 
@@ -124,6 +123,7 @@
     --bs-dropdown-font-size: 0.875rem;
   }
 }
+
 .bg-dark-pink {
   background-color: oklch(48.466% 0.19523 353.122);
 }

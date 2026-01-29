@@ -1,7 +1,7 @@
 {
   "name": "vue3-mdb-starter",
   "version": "2.0.0",
-  "description": "Starter kit project for Vue MDBootstrap v2.x",
+  "description": "Vue MDBootstrap Starter Kit Project with Bootstrap CSS Framework",
   "author": {
     "name": "Ahmad Fajar",
     "email": "ahmad.fajar234@hotmail.com"

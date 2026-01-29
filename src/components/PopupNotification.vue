@@ -86,7 +86,7 @@ const closePopup = (emitFn: TEventClose) => {
   }
 
   > .md-list {
-    --md-listview-padding-y: 0;
+    --md-listview-padding-y: 4px;
 
     .blockquote {
       color: var(--foreground-subtle-secondary);

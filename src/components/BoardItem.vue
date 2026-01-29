@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { TBoardItemProps } from '@/components/types';
-import { iconComments, iconListCheck } from '@/mixins/icons';
 import { computed } from 'vue';
 
 const props = defineProps<TBoardItemProps>();
@@ -29,11 +28,11 @@ const styles = computed(() => ({
       <BsCardContent>{{ description }}</BsCardContent>
       <div class="flex text-subtle-secondary">
         <div class="inline-flex items-center">
-          <iconListCheck size="18" />
+          <BsFontawesomeIcon icon="list-check" size="16" />
           <span class="ps-2" style="width: 50px">{{ taskCount }}</span>
         </div>
         <div class="inline-flex items-center">
-          <iconComments size="18" />
+          <BsFontawesomeIcon icon="comment" size="16" />
           <span class="ps-2" style="width: 50px">{{ commentCount }}</span>
         </div>
         <div class="inline-flex md-link">

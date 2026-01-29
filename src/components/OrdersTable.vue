@@ -14,8 +14,8 @@ const btnProps = {
   color: 'secondary',
   iconSize: 16,
   mode: 'icon',
-  flat: true,
   size: 'xs',
+  tonal: true,
 } satisfies TButtonOptionProps;
 </script>
 
@@ -44,8 +44,8 @@ const btnProps = {
             <BsBadge
               :color="badgePaymentColor(item)"
               class="badge-tonal inline-flex items-center"
-              type="pill"
               outlined
+              type="pill"
             >
               <BsIcon :icon="badgePaymentIcon(item)" size="18" />
               <span class="ms-2">{{ item.paymentStatus }}</span>
@@ -61,18 +61,32 @@ const btnProps = {
               <BsIcon :icon="badgeOrderStatusIcon(item)" size="18" />
               <span class="ms-2">{{ item.orderStatus }}</span>
             </BsBadge>
-            <BsBadge
-              v-else
-              :color="badgeOrderStatusColor(item)"
-              class="inline-flex items-center"
-            >
+            <BsBadge v-else :color="badgeOrderStatusColor(item)" class="inline-flex items-center">
               {{ item.orderStatus }}
             </BsBadge>
           </td>
           <td class="text-nowrap">
-            <BsButton v-bind="btnProps" icon="visibility" title="View" />
-            <BsButton v-bind="btnProps" icon="edit" title="Edit" />
-            <BsButton v-bind="btnProps" color="danger" icon="delete" title="Delete" />
+            <div class="md-button-group" style="gap: 2px">
+              <BsButton
+                v-bind="btnProps"
+                icon="visibility"
+                style="border-radius: 25px 10px 10px 25px"
+                title="View"
+              />
+              <BsButton
+                v-bind="btnProps"
+                icon="edit"
+                style="border-radius: 4px 4px 4px 4px"
+                title="Edit"
+              />
+              <BsButton
+                v-bind="btnProps"
+                color="danger"
+                icon="delete"
+                style="border-radius: 10px 25px 25px 10px"
+                title="Delete"
+              />
+            </div>
           </td>
         </tr>
       </tbody>

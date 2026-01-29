@@ -29,19 +29,19 @@ const styles = computed(() => ({
       <div class="flex text-subtle-secondary">
         <div class="inline-flex items-center">
           <BsFontawesomeIcon icon="list-check" size="16" />
-          <span class="ps-2" style="width: 50px">{{ taskCount }}</span>
+          <span class="small ps-2" style="width: 50px">{{ taskCount }}</span>
         </div>
         <div class="inline-flex items-center">
           <BsFontawesomeIcon icon="comment" size="16" />
-          <span class="ps-2" style="width: 50px">{{ commentCount }}</span>
+          <span class="small ps-2" style="width: 50px">{{ commentCount }}</span>
         </div>
         <div class="inline-flex md-link">
-          <BsIcon icon="thumb_up" />
-          <span class="ps-2" style="width: 50px">{{ likeCount }}</span>
+          <BsIcon icon="thumb_up" size="20" />
+          <span class="small ps-2" style="width: 50px">{{ likeCount }}</span>
         </div>
         <div class="inline-flex md-link">
-          <BsIcon icon="thumb_down" />
-          <span class="ps-2" style="width: 50px">{{ dislikeCount }}</span>
+          <BsIcon icon="thumb_down" size="20" />
+          <span class="small ps-2" style="width: 50px">{{ dislikeCount }}</span>
         </div>
       </div>
     </BsCardBody>

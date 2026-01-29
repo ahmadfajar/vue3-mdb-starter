@@ -32,7 +32,7 @@ function toggleSideDrawer(value: boolean) {
       </div>
       <BsAppbarTitle class="d-none d-md-flex">My Application</BsAppbarTitle>
       <BsSpacer />
-      <BsAppbarItems class="pe-3">
+      <BsAppbarItems class="items-center pe-3">
         <BsButton color="secondary" flat icon="search" mode="icon" />
         <BsDropdownMenu
           v-model:open="notifOpen"

@@ -7,9 +7,7 @@ import { topSelling } from '@/stores/topSelling';
   <div class="my-4">
     <h1>Products</h1>
     <div class="mt-4">
-      <BsCard>
-        <BestSellingProduct :source="topSelling" />
-      </BsCard>
+      <BestSellingProduct :source="topSelling" />
     </div>
   </div>
 </template>

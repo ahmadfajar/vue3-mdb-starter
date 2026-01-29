@@ -20,14 +20,14 @@ const btnProps = {
 </script>
 
 <template>
-  <div class="table-responsive">
-    <table class="table">
+  <div class="table-responsive rounded-0">
+    <table class="table border-t">
       <thead class="table-light">
         <tr style="font-size: 0.92rem">
           <th class="text-nowrap">Order ID</th>
           <th>Date</th>
           <th>Customer</th>
-          <th style="width: 130px">Payment Status</th>
+          <th class="text-nowrap" style="width: 130px">Payment Status</th>
           <th class="text-end pe-3">Total</th>
           <th style="width: 125px">Order Status</th>
           <th class="text-center" style="width: 100px">Action</th>
@@ -66,24 +66,24 @@ const btnProps = {
             </BsBadge>
           </td>
           <td class="text-nowrap">
-            <div class="md-button-group" style="gap: 2px">
+            <div class="md-button-group" style="gap: 3px">
               <BsButton
                 v-bind="btnProps"
                 icon="visibility"
-                style="border-radius: 25px 10px 10px 25px"
+                style="border-radius: 15px 6px 6px 15px"
                 title="View"
               />
               <BsButton
                 v-bind="btnProps"
                 icon="edit"
-                style="border-radius: 4px 4px 4px 4px"
+                style="border-radius: 6px 6px 6px 6px"
                 title="Edit"
               />
               <BsButton
                 v-bind="btnProps"
                 color="danger"
                 icon="delete"
-                style="border-radius: 10px 25px 25px 10px"
+                style="border-radius: 6px 15px 15px 6px"
                 title="Delete"
               />
             </div>

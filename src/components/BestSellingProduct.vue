@@ -28,7 +28,7 @@ const progressProps = {
               <img :alt="item.product as string" :src="item.image as string" width="60" />
               <div class="ms-3">
                 <a class="block font-weight-semibold text-nowrap" href="#">{{ item.product }}</a>
-                <div class="text-subtle-secondary small">{{ item.category }}</div>
+                <div class="text-subtle-secondary">{{ item.category }}</div>
               </div>
             </div>
           </td>

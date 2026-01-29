@@ -24,13 +24,13 @@ const { touchHandler, wheelHandler } = useTouchOrWheel(slider, scrollOffset);
       <div :id="slider.contentId" class="slider-wrapper">
         <div class="slider-item">
           <MusicInfo
-            class="bg-deep-purple-700 text-light h-full"
+            class="bg-indigo-800 text-light h-full"
             text="Listen to your favorite artists and albums whenever and wherever, online and offline."
             title="Unlimited music now"
           >
             <template #button>
               <BsButton
-                color="default"
+                color="primary"
                 size="sm"
                 @click="$notification.add('You can implement LISTEN NOW on your own.')"
               >
@@ -106,8 +106,8 @@ const { touchHandler, wheelHandler } = useTouchOrWheel(slider, scrollOffset);
     padding: 1rem 1rem 1rem 0.25rem;
 
     > img {
-      height: 120px;
-      width: 120px;
+      height: 130px;
+      width: 130px;
     }
   }
 }

@@ -1,13 +1,4 @@
 {
-  "include": [
-    "src/**/*.vue",
-    "src/**/*.ts",
-    "vite-env.d.ts",
-  ],
-  "exclude": [
-    "src/**/__tests__/*",
-    "node_modules"
-  ],
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ESNext",
@@ -23,16 +14,14 @@
       "ESNext.Symbol"
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
+      "@/*": ["./src/*"]
     },
     "verbatimModuleSyntax": true,
     "useDefineForClassFields": true,
     "forceConsistentCasingInFileNames": true,
     "libReplacement": false,
     "skipLibCheck": true,
-    
+
     /* Bundler mode */
     "noEmit": true,
     "moduleResolution": "bundler",
@@ -54,8 +43,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noUncheckedIndexedAccess": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-    "erasableSyntaxOnly": true
-  }
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src/**/*.vue", "src/**/*.ts", "vite-env.d.ts"],
+  "exclude": ["../vue-mdbootstrap/dist/*", "src/**/__tests__/*", "node_modules"]
 }

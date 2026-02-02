@@ -18,16 +18,16 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@vitejs/plugin-vue": "^6.0.3",
+    "@vitejs/plugin-vue": "^6.0.4",
     "pinia": "^3.0.4",
     "vite": "^7.3.1",
     "vue": "^3.5.27",
-    "vue-mdbootstrap": "2.2.0",
-    "vue-router": "^4.6.4"
+    "vue-mdbootstrap": "^2.2.0",
+    "vue-router": "^5.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
-    "@types/node": "^25.0.9",
+    "@types/node": "^25.2.0",
     "@types/sass": "^1.45.0",
     "@types/vue": "^2.0.0",
     "@vue/eslint-config-typescript": "^14.6.0",
@@ -38,15 +38,12 @@
     "prettier": "^3.8.1",
     "prettier-plugin-organize-attributes": "^1.0.0",
     "prettier-plugin-organize-imports": "^4.3.0",
-    "prettier-plugin-sort-imports": "^1.8.9",
+    "prettier-plugin-sort-imports": "^1.8.10",
     "sass": "^1.97.3",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.54.0",
     "vue-eslint-parser": "^10.2.0",
     "vue-tsc": "^3.2.4"
   },
-  "packageManager": "yarn@4.12.0",
-  "resolutions": {
-    "vue-mdbootstrap": "portal:../vue-mdbootstrap"
-  }
+  "packageManager": "yarn@4.12.0"
 }

@@ -100,7 +100,7 @@ export function badgeOrderStatusColor(item: TOrderRecord): string {
   }
 }
 
-export function badgeOrderStatusIcon(item: TOrderRecord) {
+export function badgeOrderStatusIcon(item: TOrderRecord): string | undefined {
   if (item.orderStatus === 'Delivered') {
     return 'done';
   } else {

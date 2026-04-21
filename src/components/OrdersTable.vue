@@ -58,7 +58,7 @@ const btnProps = {
               :color="badgeOrderStatusColor(item)"
               class="inline-flex items-center"
             >
-              <BsIcon :icon="badgeOrderStatusIcon(item)" size="18" />
+              <BsIcon :icon="badgeOrderStatusIcon(item)!" size="18" />
               <span class="ms-2">{{ item.orderStatus }}</span>
             </BsBadge>
             <BsBadge v-else :color="badgeOrderStatusColor(item)" class="inline-flex items-center">

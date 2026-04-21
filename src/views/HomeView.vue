@@ -29,7 +29,7 @@ const boardItems: TBoardItemProps[] = [
       '/images/avatar-5.webp',
       '/images/avatar-6.webp',
     ],
-    imgSrc: 'https://kmhlabs.com/wp-content/uploads/2021/02/Home-Page-KMH-Quality_1188079282.jpg',
+    imgSrc: 'https://img.freepik.com/free-vector/delivery-man-recipient-who-leaning-smartphone-with-pin_74855-4402.jpg',
     title: 'Post Tracking',
     description: 'Deals Tracking',
     taskCount: 44,

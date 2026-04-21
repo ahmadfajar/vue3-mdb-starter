@@ -43,8 +43,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noUncheckedIndexedAccess": true,
+    "noUncheckedSideEffectImports": false,
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src/**/*.vue", "src/**/*.ts", "vite-env.d.ts"],
-  "exclude": ["../vue-mdbootstrap/dist/*", "src/**/__tests__/*", "node_modules"]
+  "exclude": ["src/**/__tests__/*", "node_modules"]
 }
